@@ -1,0 +1,27 @@
+{
+  "name": "reactive-editor",
+  "version": "0.0.1",
+  "description": "video editor fully online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaucharian/reactive-editor.git"
+  },
+  "keywords": [
+    "video",
+    "editor",
+    "fully",
+    "online",
+    "video",
+    "free"
+  ],
+  "author": "MARPLACODE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chaucharian/reactive-editor/issues"
+  },
+  "homepage": "https://github.com/Chaucharian/reactive-editor#readme"
+}
