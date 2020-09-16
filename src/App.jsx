@@ -1,11 +1,11 @@
 import React from "react";
 import { AppProvider } from "core";
-import FileUpload from "components/FileUpload";
+import EditingScreen from "feature/EditingScreen";
 
 const App = () => {
   return (
     <AppProvider>
-      <FileUpload />
+      <EditingScreen />
     </AppProvider>
   );
 };

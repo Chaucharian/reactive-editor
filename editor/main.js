@@ -1,6 +1,25 @@
 const ffmpeg = require("fluent-ffmpeg");
 
 const editor = () => {
+  const merge = (files, outputFile, outputPath) => {
+    return new Promise((resolve, reject) => {
+      console.log("Merging started!");
+      const editorInstance = ffmpeg()
+        .on("error", (error) => {
+          reject(`Error merging ${error}`);
+        })
+        .on("progress", (progress) => {
+          console.log(progress.timemark);
+        })
+        .on("end", () => {
+          resolve(`${outputFile} : Processing finished!`);
+        });
+      files.map((file) => editorInstance.input(file));
+
+      editorInstance.mergeToFile(outputFile, outputPath);
+    });
+  };
+
   const crop = () => {
     return new Promise((resolve, reject) => {
       ffmpeg(rootPath + "/input.mp4") //Input Video File
@@ -25,10 +44,9 @@ const editor = () => {
   };
 
   return {
+    merge,
     crop,
-    mute,
-    removeAudio,
   };
 };
 
-export { editor };
+module.exports = editor;

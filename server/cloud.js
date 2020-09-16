@@ -8,7 +8,7 @@ const cloud = ({ email, password }) => {
   });
   storage.login((error, metadata) => {
     if (error) {
-      throw new Error(`Error at login`);
+      throw new Error(`Error ${error} at login`);
     }
   });
 
