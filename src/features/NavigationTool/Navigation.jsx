@@ -11,7 +11,7 @@ const Background = styled(motion.div)`
   left: 0;
   bottom: 0;
   width: 300px;
-  background: #fff;
+  background: ${({ theme: { palette } }) => palette.primary.main};
 `;
 
 const Nav = styled(motion.nav)`
