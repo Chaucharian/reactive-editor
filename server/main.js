@@ -9,7 +9,6 @@ const editor = require("../editor/main")();
 const rootPath = path.join(__dirname);
 const port = process.env.PORT || 8081;
 const app = express();
-const mega = cloud({ email: "chaucharian@gmail.com", password: "19.rechuwi" });
 
 // enable files upload
 app.use(
