@@ -1,11 +1,14 @@
 import React from "react";
 import { AppProvider } from "core";
-import EditingScreen from "feature/EditingScreen";
+import MainScreen from "screens/MainScreen";
+import Theme from "./Theme";
 
 const App = () => {
   return (
     <AppProvider>
-      <EditingScreen />
+      <Theme>
+        <MainScreen />
+      </Theme>
     </AppProvider>
   );
 };
