@@ -4,14 +4,17 @@ import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
 import styled from "styled-components";
 import PlusButton from "components/PlusButton";
+import { getPrimaryColor } from "core/utils";
+import Menu from "./Menu";
 
 const Background = styled(motion.div)`
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
-  background: ${({ theme: { palette } }) => palette.primary.main};
+  width: 100%;
+  height: 100%;
+  background: ${getPrimaryColor};
 `;
 
 const Nav = styled(motion.nav)`
@@ -19,7 +22,8 @@ const Nav = styled(motion.nav)`
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 100%;
+  height: 100px;
 `;
 
 const sidebar = {
@@ -54,8 +58,9 @@ const Navigation = () => {
       custom={height}
       ref={containerRef}
     >
-      <Background variants={sidebar} />
-      {/* <Navigation /> */}
+      <Background variants={sidebar}>
+        <Menu />
+      </Background>
       <PlusButton onClick={() => toggleOpen()} />
     </Nav>
   );

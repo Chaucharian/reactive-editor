@@ -1,6 +1,7 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { getSecondaryColor } from "core/utils";
 
 const Button = styled(motion.button)`
   outline: none;
@@ -18,15 +19,11 @@ const Button = styled(motion.button)`
   background: transparent;
 `;
 
-const Path = (props) => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
-    strokeLinecap="round"
-    {...props}
-  />
-);
+const Path = styled(motion.path)`
+  stroke-width: 3;
+  stroke: ${getSecondaryColor};
+  stroke-linecap: round;
+`;
 
 const animater = {
   open: {
