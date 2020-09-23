@@ -1,8 +1,14 @@
-export const initialState = { testing: "ea" };
+export const initialState = { elements: [] };
 
 export const reducer = (state, action) => {
-  switch (action.payload) {
+  switch (action.type) {
+    case "ADD": {
+      return {
+        ...state,
+        elements: [...state.elements, action.payload],
+      };
+    }
     default:
-      return state;
+      throw new Error("Action not match!");
   }
 };

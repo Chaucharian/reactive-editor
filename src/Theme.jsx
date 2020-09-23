@@ -13,8 +13,18 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#000",
+      light: "#808080",
     },
     type: "dark",
+  },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        body: {
+          overflow: "hidden",
+        },
+      },
+    },
   },
 });
 

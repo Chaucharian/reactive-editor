@@ -1,5 +1,5 @@
 import React from "react";
-import { AppProvider } from "core";
+import { AppProvider } from "core/context";
 import MainScreen from "screens/MainScreen";
 import Theme from "./Theme";
 

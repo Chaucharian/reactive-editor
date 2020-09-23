@@ -1,15 +1,14 @@
 import * as React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "./use-dimensions";
+import { useDimensions } from "core/hooks";
 import styled from "styled-components";
-import PlusButton from "components/PlusButton";
+import { PlusButton } from "components";
 import { getPrimaryColor } from "core/utils";
 import Menu from "./Menu";
 
 const Background = styled(motion.div)`
   position: relative;
-  top: 0;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -19,7 +18,6 @@ const Background = styled(motion.div)`
 
 const Nav = styled(motion.nav)`
   position: absolute;
-  top: 0;
   left: 0;
   bottom: 0;
   width: 100%;

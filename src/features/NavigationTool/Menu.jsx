@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 import styled from "styled-components";
+import { useAppContext } from "core/context";
 
 const Container = styled.div`
   margin-left: 100px;
@@ -50,16 +51,23 @@ const variants = {
   },
 };
 
-const Menu = () => (
-  <Container>
-    <List variants={variants}>
-      {itemIds.map((i) => (
-        <MenuItem i={i} key={i} />
-      ))}
-    </List>
-  </Container>
-);
+const Menu = () => {
+  const [, dispatch] = useAppContext();
 
+  return (
+    <Container>
+      <List variants={variants}>
+        {itemIds.map((i) => (
+          <MenuItem
+            i={i}
+            key={i}
+            onTap={() => dispatch({ type: "ADD", payload: 1 })}
+          />
+        ))}
+      </List>
+    </Container>
+  );
+};
 const itemIds = [0, 1, 2, 3, 4];
 
 export default Menu;

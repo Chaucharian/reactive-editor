@@ -47,4 +47,4 @@ const PlusButton = ({ onClick }) => (
   </Button>
 );
 
-export default PlusButton;
+export { PlusButton };

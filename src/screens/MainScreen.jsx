@@ -1,13 +1,14 @@
 import React from "react";
 import Navigation from "features/NavigationTool";
-import styled from "styled-components";
-
-const Container = styled.div`
-  position: relative;
-`;
+import Workspace from "features/Workspace";
 
 const MainScreen = () => {
-  return <Navigation />;
+  return (
+    <>
+      <Navigation />
+      <Workspace />
+    </>
+  );
 };
 
 export default MainScreen;
