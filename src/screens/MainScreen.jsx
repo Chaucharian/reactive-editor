@@ -1,12 +1,11 @@
 import React from "react";
-import Navigation from "features/NavigationTool";
-import Workspace from "features/Workspace";
+import WorkspaceScreen from "./WorkspaceScreen";
 
+// View where your saved posts are shown and other stuff
 const MainScreen = () => {
   return (
     <>
-      <Navigation />
-      <Workspace />
+      <WorkspaceScreen />
     </>
   );
 };

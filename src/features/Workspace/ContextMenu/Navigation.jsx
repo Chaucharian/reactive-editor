@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "core/hooks";
+import { useDimensions } from "utils/hooks";
 import styled from "styled-components";
 import { PlusButton } from "components";
-import { getPrimaryColor } from "core/utils";
+import { getPrimaryColor } from "utils";
 import Menu from "./Menu";
 
 const Background = styled(motion.div)`

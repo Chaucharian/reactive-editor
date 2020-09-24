@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   createMuiTheme,
   ThemeProvider as MaterialThemeProvider,
@@ -6,7 +6,7 @@ import {
 } from "@material-ui/core";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
-const theme = createMuiTheme({
+const defaultTheme = createMuiTheme({
   palette: {
     primary: {
       main: "#FFF",
@@ -28,12 +28,22 @@ const theme = createMuiTheme({
   },
 });
 
-const Theme = ({ children, ...props }) => (
-  <MaterialThemeProvider theme={theme} {...props}>
-    <StyledThemeProvider theme={theme}>
-      <CssBaseline>{children}</CssBaseline>
-    </StyledThemeProvider>
-  </MaterialThemeProvider>
-);
+const Theme = ({ children, ...props }) => {
+  const [theme, setTheme] = useState(defaultTheme);
+
+  const changeDark = () => {
+    theme.palette.type = theme.palette.type === "light" ? "dark" : "light";
+    const newTheme = { ...theme };
+    setTheme({ ...newTheme });
+  };
+
+  return (
+    <MaterialThemeProvider theme={{ ...theme, changeDark }} {...props}>
+      <StyledThemeProvider theme={theme}>
+        <CssBaseline>{children}</CssBaseline>
+      </StyledThemeProvider>
+    </MaterialThemeProvider>
+  );
+};
 
 export default Theme;

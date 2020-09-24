@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { getSecondaryColor } from "core/utils";
+import { getSecondaryColor } from "utils";
 
 const Button = styled(motion.button)`
   outline: none;
